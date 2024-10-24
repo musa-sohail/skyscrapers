@@ -1,0 +1,413 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:root {
+  --button-gradient-start: #1862ff;
+  --button-gradient-middle: #7731ff;
+  --button-gradient-end: #d012ff;
+  --primary-bg-color: #060606;
+  --text-color: #000000;
+  --secondary-bg-color: linear-gradient(180deg, #6279f9 0%, #1e43ff 100%);
+  --banner-gradient: linear-gradient(174deg, rgba(6,6,6,1) 0%,
+  rgb(47, 12, 40) 56%,
+  rgba(38,17,86,1) 96%);
+  --icon-color: #7a29f8;
+}
+/* Header and banner */
+nav {
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-bar {
+  position: relative;
+  height: 100%;
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+}
+
+.menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.nav-links li a {
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+}
+
+.left-section .sidebarOpen {
+  color: transparent;
+  display: none;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section .nav-link {
+  font-size: 18px;
+  padding: 0px 10px;
+  color: white;
+}
+
+.right-section .cta-btn {
+  background: var(--secondary-bg-color);
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero .content {
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .highlight {
+  background: linear-gradient(
+    81.22deg,
+    #1862ff -14.08%,
+    #7731ff 29.91%,
+    #d012ff 77.88%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.start-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  font-size: 1.3rem;
+  position: relative;
+  background: white;
+  color: #000;
+  border-radius: 50px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: none;
+}
+
+.start-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  padding: 3px;
+  background: linear-gradient(
+    81.22deg,
+    #1862ff -14.08%,
+    #7731ff 29.91%,
+    #d012ff 77.88%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  background: linear-gradient(
+    81.22deg,
+    #1862ff -14.08%,
+    #7731ff 29.91%,
+    #d012ff 77.88%
+  );
+  color: white;
+}
+
+.start-btn:hover::before {
+  opacity: 0;
+}
+
+.header-With-Banner {
+  height: 100vh;
+  background: var(--banner-gradient);
+  position: relative;
+}
+/* Partners */
+.partner-section {
+  padding: 50px 50px;
+  text-align: center;
+}
+
+.partner-section p {
+  padding-bottom: 50px;
+}
+
+.partner-section .owl-carousel .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+}
+
+.partner-section .owl-carousel img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.partner-section .container {
+  padding: 20px 0px;
+}
+/* Benefits */
+.benefits-section {
+  background: linear-gradient(
+    180deg,
+    rgba(219, 242, 255, 0.4) -6.5%,
+    rgba(236, 233, 251, 0.4) 26.05%,
+    rgba(247, 246, 255, 0.802083) 67.04%,
+    rgba(232, 237, 255, 0) 109.24%
+  );
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.benefits-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.benefit-item {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+}
+
+.benefit-item i {
+  font-size: 25px;
+  color: var(--icon-color);
+  margin-right: 20px;
+  align-self: flex-start;
+}
+
+.benefit-item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.benefits-heading {
+  padding: 30px 0px;
+}
+
+@media (max-width: 900px) {
+  .left-section .sidebarOpen {
+    display: block;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .nav-bar {
+    justify-content: space-between;
+  }
+
+  .nav-bar {
+    max-width: 100%;
+  }
+  .logo a {
+    font-size: 35px;
+  }
+
+  .nav-links li a {
+    font-size: 20px;
+    margin-top: 30px;
+    display: block;
+    color: var(--text-color);
+  }
+
+  .menu {
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    left: -100%;
+    top: 0;
+    padding: 20px;
+    background-color: white;
+    transition: left 0.4s ease;
+    z-index: 100;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+  .start-btn {
+    padding: 12px 33px;
+    font-size: 1rem;
+  }
+  .partner-section {
+    padding: 20px 20px;
+  }
+  .partner-section .owl-carousel img {
+    height: 90px;
+    width: 90px;
+  }
+  .benefits-container {
+    flex-direction: column;
+  }
+
+  .benefit-item {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 414px) {
+  .nav-bar {
+    padding: 0 20px;
+  }
+
+  .logo a {
+    font-size: 30px;
+  }
+
+  .nav-links li a {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .menu {
+    width: 280px;
+  }
+
+  .hero {
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+  .partner-section {
+    padding: 35px 35px;
+  }
+
+  .partner-section .owl-carousel img {
+    height: 90px;
+    width: 90px;
+  }
+}
